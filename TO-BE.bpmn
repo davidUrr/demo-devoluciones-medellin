@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1" targetNamespace="http://medellin.demo/bpmn" exporter="generar_bpmn.py">
+  <collaboration id="Collab_1">
+    <participant id="Pool_1" name="TO-BE — Devoluciones y compensaciones con expediente único — Subsecretaría de Ingresos de Medellín" processRef="Proceso_1"/>
+  </collaboration>
+  <process id="Proceso_1" isExecutable="false">
+    <laneSet id="LaneSet_1">
+      <lane id="L_contrib" name="Contribuyente">
+        <flowNodeRef>T_Inicio</flowNodeRef>
+        <flowNodeRef>T_Presentar</flowNodeRef>
+        <flowNodeRef>T_Subsanar</flowNodeRef>
+        <flowNodeRef>T_Interponer_recurso</flowNodeRef>
+      </lane>
+      <lane id="L_plat" name="Plataforma de expediente (automático)">
+        <flowNodeRef>T_Crear_expediente</flowNodeRef>
+        <flowNodeRef>T_Repartir</flowNodeRef>
+        <flowNodeRef>T_Vista_360</flowNodeRef>
+        <flowNodeRef>T_Ejecutoria</flowNodeRef>
+        <flowNodeRef>T_Cierre</flowNodeRef>
+        <flowNodeRef>T_Fin_pagada</flowNodeRef>
+      </lane>
+      <lane id="L_lider" name="Líder y revisores">
+        <flowNodeRef>T_Revisar_proyecto</flowNodeRef>
+        <flowNodeRef>T_Firmar</flowNodeRef>
+      </lane>
+      <lane id="L_sust" name="Sustanciadores">
+        <flowNodeRef>T_Checklist</flowNodeRef>
+        <flowNodeRef>T_GW_completa</flowNodeRef>
+        <flowNodeRef>T_Requerimiento</flowNodeRef>
+        <flowNodeRef>T_Proyectar_rechazo</flowNodeRef>
+        <flowNodeRef>T_Validar_subsanacion</flowNodeRef>
+        <flowNodeRef>T_Analizar</flowNodeRef>
+        <flowNodeRef>T_Generar_resolucion</flowNodeRef>
+      </lane>
+      <lane id="L_otras" name="Otras unidades (solicitudes con ANS)">
+        <flowNodeRef>T_Solicitud_ANS</flowNodeRef>
+        <flowNodeRef>T_Registrar_SAP</flowNodeRef>
+        <flowNodeRef>T_GW_pago</flowNodeRef>
+        <flowNodeRef>T_Cierre_compensada</flowNodeRef>
+        <flowNodeRef>T_Cruce_cartera</flowNodeRef>
+      </lane>
+      <lane id="L_notif" name="Notificaciones (Apoyo a Ingresos)">
+        <flowNodeRef>T_Notificar_inadmision</flowNodeRef>
+        <flowNodeRef>T_Notificar_rechazo</flowNodeRef>
+        <flowNodeRef>T_Fin_rechazo</flowNodeRef>
+        <flowNodeRef>T_Notificar_resolucion</flowNodeRef>
+        <flowNodeRef>T_GW_recurso</flowNodeRef>
+        <flowNodeRef>T_Notificar_recurso</flowNodeRef>
+        <flowNodeRef>T_Fin_recurso</flowNodeRef>
+      </lane>
+      <lane id="L_jur" name="Unidad Jurídica">
+        <flowNodeRef>T_Resolver_recurso</flowNodeRef>
+      </lane>
+      <lane id="L_fin" name="Presupuesto, contabilidad y Tesorería">
+        <flowNodeRef>T_Orden_pago</flowNodeRef>
+        <flowNodeRef>T_Pagar</flowNodeRef>
+      </lane>
+      <lane id="L_sis" name="Sistemas conectados progresivamente">
+        <flowNodeRef>S_Mercurio</flowNodeRef>
+        <flowNodeRef>S_Tablero</flowNodeRef>
+        <flowNodeRef>S_Lago</flowNodeRef>
+        <flowNodeRef>S_Plantillas</flowNodeRef>
+        <flowNodeRef>S_SAP</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="T_Inicio" name="Solicitud">
+      <outgoing>F000_T_Inicio_T_Presentar</outgoing>
+    </startEvent>
+    <task id="T_Presentar" name="Presentar solicitud y anexos">
+      <incoming>F000_T_Inicio_T_Presentar</incoming>
+      <outgoing>F001_T_Presentar_T_Crear_expediente</outgoing>
+    </task>
+    <task id="T_Crear_expediente" name="Crear expediente desde el radicado">
+      <incoming>F001_T_Presentar_T_Crear_expediente</incoming>
+      <outgoing>F002_T_Crear_expediente_T_Repartir</outgoing>
+    </task>
+    <task id="T_Repartir" name="Repartir por reglas y carga">
+      <incoming>F002_T_Crear_expediente_T_Repartir</incoming>
+      <outgoing>F003_T_Repartir_T_Checklist</outgoing>
+    </task>
+    <task id="T_Checklist" name="Checklist de requisitos por renta">
+      <incoming>F003_T_Repartir_T_Checklist</incoming>
+      <outgoing>F004_T_Checklist_T_GW_completa</outgoing>
+    </task>
+    <exclusiveGateway id="T_GW_completa" name="¿Procede?">
+      <incoming>F004_T_Checklist_T_GW_completa</incoming>
+      <outgoing>F005_T_GW_completa_T_Requerimiento</outgoing>
+      <outgoing>F006_T_GW_completa_T_Proyectar_rechazo</outgoing>
+      <outgoing>F007_T_GW_completa_T_Vista_360</outgoing>
+    </exclusiveGateway>
+    <task id="T_Requerimiento" name="Requerimiento desde plantilla">
+      <incoming>F005_T_GW_completa_T_Requerimiento</incoming>
+      <outgoing>F008_T_Requerimiento_T_Notificar_inadmision</outgoing>
+    </task>
+    <task id="T_Proyectar_rechazo" name="Rechazo desde plantilla (firma del líder)">
+      <incoming>F006_T_GW_completa_T_Proyectar_rechazo</incoming>
+      <outgoing>F012_T_Proyectar_rechazo_T_Notificar_rechazo</outgoing>
+    </task>
+    <task id="T_Notificar_inadmision" name="Notificar y trazar inadmisión">
+      <incoming>F008_T_Requerimiento_T_Notificar_inadmision</incoming>
+      <outgoing>F009_T_Notificar_inadmision_T_Subsanar</outgoing>
+    </task>
+    <task id="T_Notificar_rechazo" name="Notificar y trazar rechazo">
+      <incoming>F012_T_Proyectar_rechazo_T_Notificar_rechazo</incoming>
+      <outgoing>F013_T_Notificar_rechazo_T_Fin_rechazo</outgoing>
+    </task>
+    <endEvent id="T_Fin_rechazo" name="Rechazada">
+      <incoming>F013_T_Notificar_rechazo_T_Fin_rechazo</incoming>
+    </endEvent>
+    <task id="T_Subsanar" name="Subsanar dentro del término">
+      <incoming>F009_T_Notificar_inadmision_T_Subsanar</incoming>
+      <outgoing>F010_T_Subsanar_T_Validar_subsanacion</outgoing>
+    </task>
+    <task id="T_Validar_subsanacion" name="Validar subsanación con checklist">
+      <incoming>F010_T_Subsanar_T_Validar_subsanacion</incoming>
+      <outgoing>F011_T_Validar_subsanacion_T_Vista_360</outgoing>
+    </task>
+    <task id="T_Vista_360" name="Vista 360 del contribuyente (solo consulta)">
+      <incoming>F007_T_GW_completa_T_Vista_360</incoming>
+      <incoming>F011_T_Validar_subsanacion_T_Vista_360</incoming>
+      <outgoing>F014_T_Vista_360_T_Solicitud_ANS</outgoing>
+    </task>
+    <task id="T_Solicitud_ANS" name="Atender solicitud con ANS y seguimiento">
+      <incoming>F014_T_Vista_360_T_Solicitud_ANS</incoming>
+      <outgoing>F015_T_Solicitud_ANS_T_Analizar</outgoing>
+    </task>
+    <task id="T_Analizar" name="Analizar y verificar el saldo">
+      <incoming>F015_T_Solicitud_ANS_T_Analizar</incoming>
+      <outgoing>F016_T_Analizar_T_Revisar_proyecto</outgoing>
+    </task>
+    <task id="T_Revisar_proyecto" name="Revisar proyecto en la bandeja">
+      <incoming>F016_T_Analizar_T_Revisar_proyecto</incoming>
+      <outgoing>F017_T_Revisar_proyecto_T_Generar_resolucion</outgoing>
+    </task>
+    <task id="T_Generar_resolucion" name="Generar resolución desde plantilla">
+      <incoming>F017_T_Revisar_proyecto_T_Generar_resolucion</incoming>
+      <outgoing>F018_T_Generar_resolucion_T_Firmar</outgoing>
+    </task>
+    <task id="T_Firmar" name="Revisar y firmar con versión controlada">
+      <incoming>F018_T_Generar_resolucion_T_Firmar</incoming>
+      <outgoing>F019_T_Firmar_T_Notificar_resolucion</outgoing>
+    </task>
+    <task id="T_Notificar_resolucion" name="Notificar y trazar resolución">
+      <incoming>F019_T_Firmar_T_Notificar_resolucion</incoming>
+      <outgoing>F020_T_Notificar_resolucion_T_GW_recurso</outgoing>
+    </task>
+    <exclusiveGateway id="T_GW_recurso" name="¿Recurso?">
+      <incoming>F020_T_Notificar_resolucion_T_GW_recurso</incoming>
+      <outgoing>F021_T_GW_recurso_T_Interponer_recurso</outgoing>
+      <outgoing>F025_T_GW_recurso_T_Ejecutoria</outgoing>
+    </exclusiveGateway>
+    <task id="T_Interponer_recurso" name="Interponer recurso">
+      <incoming>F021_T_GW_recurso_T_Interponer_recurso</incoming>
+      <outgoing>F022_T_Interponer_recurso_T_Resolver_recurso</outgoing>
+    </task>
+    <task id="T_Resolver_recurso" name="Resolver recurso con relatoría">
+      <incoming>F022_T_Interponer_recurso_T_Resolver_recurso</incoming>
+      <outgoing>F023_T_Resolver_recurso_T_Notificar_recurso</outgoing>
+    </task>
+    <task id="T_Notificar_recurso" name="Notificar decisión del recurso">
+      <incoming>F023_T_Resolver_recurso_T_Notificar_recurso</incoming>
+      <outgoing>F024_T_Notificar_recurso_T_Fin_recurso</outgoing>
+    </task>
+    <endEvent id="T_Fin_recurso" name="Recurso resuelto">
+      <incoming>F024_T_Notificar_recurso_T_Fin_recurso</incoming>
+    </endEvent>
+    <task id="T_Ejecutoria" name="Motor de términos: ejecutoria">
+      <incoming>F025_T_GW_recurso_T_Ejecutoria</incoming>
+      <outgoing>F026_T_Ejecutoria_T_Registrar_SAP</outgoing>
+    </task>
+    <task id="T_Registrar_SAP" name="Registrar en cuenta corriente (tarea con ANS)">
+      <incoming>F026_T_Ejecutoria_T_Registrar_SAP</incoming>
+      <outgoing>F027_T_Registrar_SAP_T_GW_pago</outgoing>
+    </task>
+    <exclusiveGateway id="T_GW_pago" name="¿Saldo a pagar?">
+      <incoming>F027_T_Registrar_SAP_T_GW_pago</incoming>
+      <outgoing>F028_T_GW_pago_T_Cierre_compensada</outgoing>
+      <outgoing>F029_T_GW_pago_T_Cruce_cartera</outgoing>
+      <outgoing>F030_T_GW_pago_T_Orden_pago</outgoing>
+    </exclusiveGateway>
+    <endEvent id="T_Cierre_compensada" name="Compensada">
+      <incoming>F028_T_GW_pago_T_Cierre_compensada</incoming>
+    </endEvent>
+    <task id="T_Cruce_cartera" name="Cruzar con cartera en la vista 360">
+      <incoming>F029_T_GW_pago_T_Cruce_cartera</incoming>
+      <outgoing>F031_T_Cruce_cartera_T_Orden_pago</outgoing>
+    </task>
+    <task id="T_Orden_pago" name="Orden de pago y registro contable">
+      <incoming>F030_T_GW_pago_T_Orden_pago</incoming>
+      <incoming>F031_T_Cruce_cartera_T_Orden_pago</incoming>
+      <outgoing>F032_T_Orden_pago_T_Pagar</outgoing>
+    </task>
+    <task id="T_Pagar" name="Pagar y adjuntar evidencia">
+      <incoming>F032_T_Orden_pago_T_Pagar</incoming>
+      <outgoing>F033_T_Pagar_T_Cierre</outgoing>
+    </task>
+    <task id="T_Cierre" name="Cerrar expediente y bitácora">
+      <incoming>F033_T_Pagar_T_Cierre</incoming>
+      <outgoing>F034_T_Cierre_T_Fin_pagada</outgoing>
+    </task>
+    <endEvent id="T_Fin_pagada" name="Pagada">
+      <incoming>F034_T_Cierre_T_Fin_pagada</incoming>
+    </endEvent>
+    <task id="S_Mercurio" name="Mercurio (radicado)">
+    </task>
+    <task id="S_Tablero" name="Tablero, alertas y bitácora">
+    </task>
+    <task id="S_Lago" name="Lago de datos / Power BI (consulta)">
+    </task>
+    <task id="S_Plantillas" name="Plantillas y NAS">
+    </task>
+    <task id="S_SAP" name="SAP (vía Centro de Competencias)">
+    </task>
+    <sequenceFlow id="F000_T_Inicio_T_Presentar" sourceRef="T_Inicio" targetRef="T_Presentar"/>
+    <sequenceFlow id="F001_T_Presentar_T_Crear_expediente" sourceRef="T_Presentar" targetRef="T_Crear_expediente"/>
+    <sequenceFlow id="F002_T_Crear_expediente_T_Repartir" sourceRef="T_Crear_expediente" targetRef="T_Repartir"/>
+    <sequenceFlow id="F003_T_Repartir_T_Checklist" sourceRef="T_Repartir" targetRef="T_Checklist"/>
+    <sequenceFlow id="F004_T_Checklist_T_GW_completa" sourceRef="T_Checklist" targetRef="T_GW_completa"/>
+    <sequenceFlow id="F005_T_GW_completa_T_Requerimiento" sourceRef="T_GW_completa" targetRef="T_Requerimiento" name="Incompleta"/>
+    <sequenceFlow id="F006_T_GW_completa_T_Proyectar_rechazo" sourceRef="T_GW_completa" targetRef="T_Proyectar_rechazo" name="No procede"/>
+    <sequenceFlow id="F007_T_GW_completa_T_Vista_360" sourceRef="T_GW_completa" targetRef="T_Vista_360" name="Completa"/>
+    <sequenceFlow id="F008_T_Requerimiento_T_Notificar_inadmision" sourceRef="T_Requerimiento" targetRef="T_Notificar_inadmision"/>
+    <sequenceFlow id="F009_T_Notificar_inadmision_T_Subsanar" sourceRef="T_Notificar_inadmision" targetRef="T_Subsanar"/>
+    <sequenceFlow id="F010_T_Subsanar_T_Validar_subsanacion" sourceRef="T_Subsanar" targetRef="T_Validar_subsanacion"/>
+    <sequenceFlow id="F011_T_Validar_subsanacion_T_Vista_360" sourceRef="T_Validar_subsanacion" targetRef="T_Vista_360"/>
+    <sequenceFlow id="F012_T_Proyectar_rechazo_T_Notificar_rechazo" sourceRef="T_Proyectar_rechazo" targetRef="T_Notificar_rechazo"/>
+    <sequenceFlow id="F013_T_Notificar_rechazo_T_Fin_rechazo" sourceRef="T_Notificar_rechazo" targetRef="T_Fin_rechazo"/>
+    <sequenceFlow id="F014_T_Vista_360_T_Solicitud_ANS" sourceRef="T_Vista_360" targetRef="T_Solicitud_ANS"/>
+    <sequenceFlow id="F015_T_Solicitud_ANS_T_Analizar" sourceRef="T_Solicitud_ANS" targetRef="T_Analizar"/>
+    <sequenceFlow id="F016_T_Analizar_T_Revisar_proyecto" sourceRef="T_Analizar" targetRef="T_Revisar_proyecto"/>
+    <sequenceFlow id="F017_T_Revisar_proyecto_T_Generar_resolucion" sourceRef="T_Revisar_proyecto" targetRef="T_Generar_resolucion"/>
+    <sequenceFlow id="F018_T_Generar_resolucion_T_Firmar" sourceRef="T_Generar_resolucion" targetRef="T_Firmar"/>
+    <sequenceFlow id="F019_T_Firmar_T_Notificar_resolucion" sourceRef="T_Firmar" targetRef="T_Notificar_resolucion"/>
+    <sequenceFlow id="F020_T_Notificar_resolucion_T_GW_recurso" sourceRef="T_Notificar_resolucion" targetRef="T_GW_recurso"/>
+    <sequenceFlow id="F021_T_GW_recurso_T_Interponer_recurso" sourceRef="T_GW_recurso" targetRef="T_Interponer_recurso" name="Sí"/>
+    <sequenceFlow id="F022_T_Interponer_recurso_T_Resolver_recurso" sourceRef="T_Interponer_recurso" targetRef="T_Resolver_recurso"/>
+    <sequenceFlow id="F023_T_Resolver_recurso_T_Notificar_recurso" sourceRef="T_Resolver_recurso" targetRef="T_Notificar_recurso"/>
+    <sequenceFlow id="F024_T_Notificar_recurso_T_Fin_recurso" sourceRef="T_Notificar_recurso" targetRef="T_Fin_recurso"/>
+    <sequenceFlow id="F025_T_GW_recurso_T_Ejecutoria" sourceRef="T_GW_recurso" targetRef="T_Ejecutoria" name="No"/>
+    <sequenceFlow id="F026_T_Ejecutoria_T_Registrar_SAP" sourceRef="T_Ejecutoria" targetRef="T_Registrar_SAP"/>
+    <sequenceFlow id="F027_T_Registrar_SAP_T_GW_pago" sourceRef="T_Registrar_SAP" targetRef="T_GW_pago"/>
+    <sequenceFlow id="F028_T_GW_pago_T_Cierre_compensada" sourceRef="T_GW_pago" targetRef="T_Cierre_compensada" name="Compensación"/>
+    <sequenceFlow id="F029_T_GW_pago_T_Cruce_cartera" sourceRef="T_GW_pago" targetRef="T_Cruce_cartera" name="Tiene deudas"/>
+    <sequenceFlow id="F030_T_GW_pago_T_Orden_pago" sourceRef="T_GW_pago" targetRef="T_Orden_pago" name="Devolución"/>
+    <sequenceFlow id="F031_T_Cruce_cartera_T_Orden_pago" sourceRef="T_Cruce_cartera" targetRef="T_Orden_pago"/>
+    <sequenceFlow id="F032_T_Orden_pago_T_Pagar" sourceRef="T_Orden_pago" targetRef="T_Pagar"/>
+    <sequenceFlow id="F033_T_Pagar_T_Cierre" sourceRef="T_Pagar" targetRef="T_Cierre"/>
+    <sequenceFlow id="F034_T_Cierre_T_Fin_pagada" sourceRef="T_Cierre" targetRef="T_Fin_pagada"/>
+    <association id="As00_T_Crear_expediente_S_Mercurio" sourceRef="T_Crear_expediente" targetRef="S_Mercurio"/>
+    <association id="As01_T_Ejecutoria_S_Tablero" sourceRef="T_Ejecutoria" targetRef="S_Tablero"/>
+    <association id="As02_T_Vista_360_S_Lago" sourceRef="T_Vista_360" targetRef="S_Lago"/>
+    <association id="As03_T_Generar_resolucion_S_Plantillas" sourceRef="T_Generar_resolucion" targetRef="S_Plantillas"/>
+    <association id="As04_T_Registrar_SAP_S_SAP" sourceRef="T_Registrar_SAP" targetRef="S_SAP"/>
+  </process>
+  <bpmndi:BPMNDiagram id="Diagrama_1">
+    <bpmndi:BPMNPlane id="Plano_1" bpmnElement="Collab_1">
+      <bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true"><dc:Bounds x="0" y="0" width="4090" height="1080"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_contrib_di" bpmnElement="L_contrib" isHorizontal="true"><dc:Bounds x="30" y="0" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_plat_di" bpmnElement="L_plat" isHorizontal="true"><dc:Bounds x="30" y="120" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_lider_di" bpmnElement="L_lider" isHorizontal="true"><dc:Bounds x="30" y="240" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_sust_di" bpmnElement="L_sust" isHorizontal="true"><dc:Bounds x="30" y="360" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_otras_di" bpmnElement="L_otras" isHorizontal="true"><dc:Bounds x="30" y="480" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_notif_di" bpmnElement="L_notif" isHorizontal="true"><dc:Bounds x="30" y="600" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_jur_di" bpmnElement="L_jur" isHorizontal="true"><dc:Bounds x="30" y="720" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_fin_di" bpmnElement="L_fin" isHorizontal="true"><dc:Bounds x="30" y="840" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L_sis_di" bpmnElement="L_sis" isHorizontal="true"><dc:Bounds x="30" y="960" width="4060" height="120"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Inicio_di" bpmnElement="T_Inicio"><dc:Bounds x="207" y="42" width="36" height="36"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Presentar_di" bpmnElement="T_Presentar"><dc:Bounds x="316" y="29" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Crear_expediente_di" bpmnElement="T_Crear_expediente"><dc:Bounds x="466" y="149" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Repartir_di" bpmnElement="T_Repartir"><dc:Bounds x="616" y="149" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Checklist_di" bpmnElement="T_Checklist"><dc:Bounds x="766" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_GW_completa_di" bpmnElement="T_GW_completa"><dc:Bounds x="952" y="397" width="46" height="46"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Requerimiento_di" bpmnElement="T_Requerimiento"><dc:Bounds x="1066" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Proyectar_rechazo_di" bpmnElement="T_Proyectar_rechazo"><dc:Bounds x="1216" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Notificar_inadmision_di" bpmnElement="T_Notificar_inadmision"><dc:Bounds x="1216" y="629" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Notificar_rechazo_di" bpmnElement="T_Notificar_rechazo"><dc:Bounds x="1366" y="629" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Fin_rechazo_di" bpmnElement="T_Fin_rechazo"><dc:Bounds x="1557" y="642" width="36" height="36"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Subsanar_di" bpmnElement="T_Subsanar"><dc:Bounds x="1366" y="29" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Validar_subsanacion_di" bpmnElement="T_Validar_subsanacion"><dc:Bounds x="1516" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Vista_360_di" bpmnElement="T_Vista_360"><dc:Bounds x="1666" y="149" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Solicitud_ANS_di" bpmnElement="T_Solicitud_ANS"><dc:Bounds x="1816" y="509" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Analizar_di" bpmnElement="T_Analizar"><dc:Bounds x="1966" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Revisar_proyecto_di" bpmnElement="T_Revisar_proyecto"><dc:Bounds x="2116" y="269" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Generar_resolucion_di" bpmnElement="T_Generar_resolucion"><dc:Bounds x="2266" y="389" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Firmar_di" bpmnElement="T_Firmar"><dc:Bounds x="2416" y="269" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Notificar_resolucion_di" bpmnElement="T_Notificar_resolucion"><dc:Bounds x="2566" y="629" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_GW_recurso_di" bpmnElement="T_GW_recurso"><dc:Bounds x="2752" y="637" width="46" height="46"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Interponer_recurso_di" bpmnElement="T_Interponer_recurso"><dc:Bounds x="2866" y="29" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Resolver_recurso_di" bpmnElement="T_Resolver_recurso"><dc:Bounds x="3016" y="749" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Notificar_recurso_di" bpmnElement="T_Notificar_recurso"><dc:Bounds x="3316" y="629" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Fin_recurso_di" bpmnElement="T_Fin_recurso"><dc:Bounds x="3657" y="642" width="36" height="36"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Ejecutoria_di" bpmnElement="T_Ejecutoria"><dc:Bounds x="2866" y="149" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Registrar_SAP_di" bpmnElement="T_Registrar_SAP"><dc:Bounds x="3016" y="509" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_GW_pago_di" bpmnElement="T_GW_pago"><dc:Bounds x="3202" y="517" width="46" height="46"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Cierre_compensada_di" bpmnElement="T_Cierre_compensada"><dc:Bounds x="3357" y="522" width="36" height="36"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Cruce_cartera_di" bpmnElement="T_Cruce_cartera"><dc:Bounds x="3466" y="509" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Orden_pago_di" bpmnElement="T_Orden_pago"><dc:Bounds x="3466" y="869" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Pagar_di" bpmnElement="T_Pagar"><dc:Bounds x="3616" y="869" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Cierre_di" bpmnElement="T_Cierre"><dc:Bounds x="3766" y="149" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T_Fin_pagada_di" bpmnElement="T_Fin_pagada"><dc:Bounds x="3957" y="162" width="36" height="36"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Mercurio_di" bpmnElement="S_Mercurio"><dc:Bounds x="466" y="989" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Tablero_di" bpmnElement="S_Tablero"><dc:Bounds x="2866" y="989" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Lago_di" bpmnElement="S_Lago"><dc:Bounds x="1666" y="989" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Plantillas_di" bpmnElement="S_Plantillas"><dc:Bounds x="2266" y="989" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_SAP_di" bpmnElement="S_SAP"><dc:Bounds x="3316" y="989" width="118" height="62"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="F000_T_Inicio_T_Presentar_di" bpmnElement="F000_T_Inicio_T_Presentar">
+        <di:waypoint x="243" y="60"/>
+        <di:waypoint x="316" y="60"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F001_T_Presentar_T_Crear_expediente_di" bpmnElement="F001_T_Presentar_T_Crear_expediente">
+        <di:waypoint x="375" y="91"/>
+        <di:waypoint x="375" y="180"/>
+        <di:waypoint x="466" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F002_T_Crear_expediente_T_Repartir_di" bpmnElement="F002_T_Crear_expediente_T_Repartir">
+        <di:waypoint x="584" y="180"/>
+        <di:waypoint x="616" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F003_T_Repartir_T_Checklist_di" bpmnElement="F003_T_Repartir_T_Checklist">
+        <di:waypoint x="675" y="211"/>
+        <di:waypoint x="675" y="420"/>
+        <di:waypoint x="766" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F004_T_Checklist_T_GW_completa_di" bpmnElement="F004_T_Checklist_T_GW_completa">
+        <di:waypoint x="884" y="420"/>
+        <di:waypoint x="952" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F005_T_GW_completa_T_Requerimiento_di" bpmnElement="F005_T_GW_completa_T_Requerimiento">
+        <di:waypoint x="998" y="420"/>
+        <di:waypoint x="1066" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F006_T_GW_completa_T_Proyectar_rechazo_di" bpmnElement="F006_T_GW_completa_T_Proyectar_rechazo">
+        <di:waypoint x="975" y="397"/>
+        <di:waypoint x="975" y="373"/>
+        <di:waypoint x="1275" y="373"/>
+        <di:waypoint x="1275" y="389"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F007_T_GW_completa_T_Vista_360_di" bpmnElement="F007_T_GW_completa_T_Vista_360">
+        <di:waypoint x="975" y="397"/>
+        <di:waypoint x="975" y="180"/>
+        <di:waypoint x="1666" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F008_T_Requerimiento_T_Notificar_inadmision_di" bpmnElement="F008_T_Requerimiento_T_Notificar_inadmision">
+        <di:waypoint x="1125" y="451"/>
+        <di:waypoint x="1125" y="660"/>
+        <di:waypoint x="1216" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F009_T_Notificar_inadmision_T_Subsanar_di" bpmnElement="F009_T_Notificar_inadmision_T_Subsanar">
+        <di:waypoint x="1334" y="660"/>
+        <di:waypoint x="1350" y="660"/>
+        <di:waypoint x="1350" y="60"/>
+        <di:waypoint x="1366" y="60"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F010_T_Subsanar_T_Validar_subsanacion_di" bpmnElement="F010_T_Subsanar_T_Validar_subsanacion">
+        <di:waypoint x="1425" y="91"/>
+        <di:waypoint x="1425" y="420"/>
+        <di:waypoint x="1516" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F011_T_Validar_subsanacion_T_Vista_360_di" bpmnElement="F011_T_Validar_subsanacion_T_Vista_360">
+        <di:waypoint x="1575" y="389"/>
+        <di:waypoint x="1575" y="180"/>
+        <di:waypoint x="1666" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F012_T_Proyectar_rechazo_T_Notificar_rechazo_di" bpmnElement="F012_T_Proyectar_rechazo_T_Notificar_rechazo">
+        <di:waypoint x="1334" y="420"/>
+        <di:waypoint x="1425" y="420"/>
+        <di:waypoint x="1425" y="629"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F013_T_Notificar_rechazo_T_Fin_rechazo_di" bpmnElement="F013_T_Notificar_rechazo_T_Fin_rechazo">
+        <di:waypoint x="1484" y="660"/>
+        <di:waypoint x="1557" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F014_T_Vista_360_T_Solicitud_ANS_di" bpmnElement="F014_T_Vista_360_T_Solicitud_ANS">
+        <di:waypoint x="1725" y="211"/>
+        <di:waypoint x="1725" y="540"/>
+        <di:waypoint x="1816" y="540"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F015_T_Solicitud_ANS_T_Analizar_di" bpmnElement="F015_T_Solicitud_ANS_T_Analizar">
+        <di:waypoint x="1875" y="509"/>
+        <di:waypoint x="1875" y="420"/>
+        <di:waypoint x="1966" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F016_T_Analizar_T_Revisar_proyecto_di" bpmnElement="F016_T_Analizar_T_Revisar_proyecto">
+        <di:waypoint x="2025" y="389"/>
+        <di:waypoint x="2025" y="300"/>
+        <di:waypoint x="2116" y="300"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F017_T_Revisar_proyecto_T_Generar_resolucion_di" bpmnElement="F017_T_Revisar_proyecto_T_Generar_resolucion">
+        <di:waypoint x="2175" y="331"/>
+        <di:waypoint x="2175" y="420"/>
+        <di:waypoint x="2266" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F018_T_Generar_resolucion_T_Firmar_di" bpmnElement="F018_T_Generar_resolucion_T_Firmar">
+        <di:waypoint x="2325" y="389"/>
+        <di:waypoint x="2325" y="300"/>
+        <di:waypoint x="2416" y="300"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F019_T_Firmar_T_Notificar_resolucion_di" bpmnElement="F019_T_Firmar_T_Notificar_resolucion">
+        <di:waypoint x="2475" y="331"/>
+        <di:waypoint x="2475" y="660"/>
+        <di:waypoint x="2566" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F020_T_Notificar_resolucion_T_GW_recurso_di" bpmnElement="F020_T_Notificar_resolucion_T_GW_recurso">
+        <di:waypoint x="2684" y="660"/>
+        <di:waypoint x="2752" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F021_T_GW_recurso_T_Interponer_recurso_di" bpmnElement="F021_T_GW_recurso_T_Interponer_recurso">
+        <di:waypoint x="2775" y="637"/>
+        <di:waypoint x="2775" y="60"/>
+        <di:waypoint x="2866" y="60"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F022_T_Interponer_recurso_T_Resolver_recurso_di" bpmnElement="F022_T_Interponer_recurso_T_Resolver_recurso">
+        <di:waypoint x="2984" y="60"/>
+        <di:waypoint x="3000" y="60"/>
+        <di:waypoint x="3000" y="780"/>
+        <di:waypoint x="3016" y="780"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F023_T_Resolver_recurso_T_Notificar_recurso_di" bpmnElement="F023_T_Resolver_recurso_T_Notificar_recurso">
+        <di:waypoint x="3075" y="749"/>
+        <di:waypoint x="3075" y="660"/>
+        <di:waypoint x="3316" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F024_T_Notificar_recurso_T_Fin_recurso_di" bpmnElement="F024_T_Notificar_recurso_T_Fin_recurso">
+        <di:waypoint x="3434" y="660"/>
+        <di:waypoint x="3657" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F025_T_GW_recurso_T_Ejecutoria_di" bpmnElement="F025_T_GW_recurso_T_Ejecutoria">
+        <di:waypoint x="2775" y="637"/>
+        <di:waypoint x="2775" y="180"/>
+        <di:waypoint x="2866" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F026_T_Ejecutoria_T_Registrar_SAP_di" bpmnElement="F026_T_Ejecutoria_T_Registrar_SAP">
+        <di:waypoint x="2925" y="211"/>
+        <di:waypoint x="2925" y="540"/>
+        <di:waypoint x="3016" y="540"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F027_T_Registrar_SAP_T_GW_pago_di" bpmnElement="F027_T_Registrar_SAP_T_GW_pago">
+        <di:waypoint x="3134" y="540"/>
+        <di:waypoint x="3202" y="540"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F028_T_GW_pago_T_Cierre_compensada_di" bpmnElement="F028_T_GW_pago_T_Cierre_compensada">
+        <di:waypoint x="3248" y="540"/>
+        <di:waypoint x="3357" y="540"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F029_T_GW_pago_T_Cruce_cartera_di" bpmnElement="F029_T_GW_pago_T_Cruce_cartera">
+        <di:waypoint x="3225" y="517"/>
+        <di:waypoint x="3225" y="493"/>
+        <di:waypoint x="3525" y="493"/>
+        <di:waypoint x="3525" y="509"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F030_T_GW_pago_T_Orden_pago_di" bpmnElement="F030_T_GW_pago_T_Orden_pago">
+        <di:waypoint x="3225" y="563"/>
+        <di:waypoint x="3225" y="900"/>
+        <di:waypoint x="3466" y="900"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F031_T_Cruce_cartera_T_Orden_pago_di" bpmnElement="F031_T_Cruce_cartera_T_Orden_pago">
+        <di:waypoint x="3525" y="571"/>
+        <di:waypoint x="3525" y="869"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F032_T_Orden_pago_T_Pagar_di" bpmnElement="F032_T_Orden_pago_T_Pagar">
+        <di:waypoint x="3584" y="900"/>
+        <di:waypoint x="3616" y="900"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F033_T_Pagar_T_Cierre_di" bpmnElement="F033_T_Pagar_T_Cierre">
+        <di:waypoint x="3734" y="900"/>
+        <di:waypoint x="3825" y="900"/>
+        <di:waypoint x="3825" y="211"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F034_T_Cierre_T_Fin_pagada_di" bpmnElement="F034_T_Cierre_T_Fin_pagada">
+        <di:waypoint x="3884" y="180"/>
+        <di:waypoint x="3957" y="180"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="As00_T_Crear_expediente_S_Mercurio_di" bpmnElement="As00_T_Crear_expediente_S_Mercurio">
+        <di:waypoint x="525" y="211"/>
+        <di:waypoint x="525" y="989"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="As01_T_Ejecutoria_S_Tablero_di" bpmnElement="As01_T_Ejecutoria_S_Tablero">
+        <di:waypoint x="2925" y="211"/>
+        <di:waypoint x="2925" y="989"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="As02_T_Vista_360_S_Lago_di" bpmnElement="As02_T_Vista_360_S_Lago">
+        <di:waypoint x="1725" y="211"/>
+        <di:waypoint x="1725" y="989"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="As03_T_Generar_resolucion_S_Plantillas_di" bpmnElement="As03_T_Generar_resolucion_S_Plantillas">
+        <di:waypoint x="2325" y="451"/>
+        <di:waypoint x="2325" y="989"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="As04_T_Registrar_SAP_S_SAP_di" bpmnElement="As04_T_Registrar_SAP_S_SAP">
+        <di:waypoint x="3134" y="540"/>
+        <di:waypoint x="3150" y="540"/>
+        <di:waypoint x="3150" y="1020"/>
+        <di:waypoint x="3316" y="1020"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

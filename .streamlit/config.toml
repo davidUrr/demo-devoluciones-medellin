@@ -1,0 +1,8 @@
+# Tema provisional (ver branding/colors.py): reemplazar primaryColor por el
+# color oficial cuando se reciba el Manual de Identidad del Distrito.
+[theme]
+primaryColor = "#1F5A96"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F4F7"
+textColor = "#1B1F24"
+font = "sans serif"

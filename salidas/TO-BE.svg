@@ -1,0 +1,239 @@
+<svg id="stage-tobe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4130 1120" width="4130" height="1120" preserveAspectRatio="xMidYMid meet" style="display:block;transform-origin:0 0;" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="flecha-tobe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="4130" height="1120" fill="#f8f9fa"/>
+<rect x="30" y="0" width="4060" height="120" fill="#ffffff" stroke="#dcdcdc"/>
+<text x="38" y="18" font-size="13" fill="#666" font-weight="600">Contribuyente</text>
+<rect x="30" y="120" width="4060" height="120" fill="#f1f3f5" stroke="#dcdcdc"/>
+<text x="38" y="138" font-size="13" fill="#666" font-weight="600">Plataforma de expediente (automático)</text>
+<rect x="30" y="240" width="4060" height="120" fill="#ffffff" stroke="#dcdcdc"/>
+<text x="38" y="258" font-size="13" fill="#666" font-weight="600">Líder y revisores</text>
+<rect x="30" y="360" width="4060" height="120" fill="#f1f3f5" stroke="#dcdcdc"/>
+<text x="38" y="378" font-size="13" fill="#666" font-weight="600">Sustanciadores</text>
+<rect x="30" y="480" width="4060" height="120" fill="#ffffff" stroke="#dcdcdc"/>
+<text x="38" y="498" font-size="13" fill="#666" font-weight="600">Otras unidades (solicitudes con ANS)</text>
+<rect x="30" y="600" width="4060" height="120" fill="#f1f3f5" stroke="#dcdcdc"/>
+<text x="38" y="618" font-size="13" fill="#666" font-weight="600">Notificaciones (Apoyo a Ingresos)</text>
+<rect x="30" y="720" width="4060" height="120" fill="#ffffff" stroke="#dcdcdc"/>
+<text x="38" y="738" font-size="13" fill="#666" font-weight="600">Unidad Jurídica</text>
+<rect x="30" y="840" width="4060" height="120" fill="#f1f3f5" stroke="#dcdcdc"/>
+<text x="38" y="858" font-size="13" fill="#666" font-weight="600">Presupuesto, contabilidad y Tesorería</text>
+<rect x="30" y="960" width="4060" height="120" fill="#ffffff" stroke="#dcdcdc"/>
+<text x="38" y="978" font-size="13" fill="#666" font-weight="600">Sistemas conectados progresivamente</text>
+<polyline points="243,60 316,60" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="375,91 375,180 466,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="584,180 616,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="675,211 675,420 766,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="884,420 952,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="998,420 1066,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="975,397 975,373 1275,373 1275,389" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="975,397 975,180 1666,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1125,451 1125,660 1216,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1334,660 1350,660 1350,60 1366,60" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1425,91 1425,420 1516,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1575,389 1575,180 1666,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1334,420 1425,420 1425,629" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1484,660 1557,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1725,211 1725,540 1816,540" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="1875,509 1875,420 1966,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2025,389 2025,300 2116,300" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2175,331 2175,420 2266,420" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2325,389 2325,300 2416,300" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2475,331 2475,660 2566,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2684,660 2752,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2775,637 2775,60 2866,60" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2984,60 3000,60 3000,780 3016,780" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3075,749 3075,660 3316,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3434,660 3657,660" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2775,637 2775,180 2866,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="2925,211 2925,540 3016,540" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3134,540 3202,540" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3248,540 3357,540" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3225,517 3225,493 3525,493 3525,509" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3225,563 3225,900 3466,900" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3525,571 3525,869" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3584,900 3616,900" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3734,900 3825,900 3825,211" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="3884,180 3957,180" fill="none" stroke="#555" stroke-width="1.6" marker-end="url(#flecha-tobe)"/>
+<polyline points="525,211 525,989" fill="none" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+<polyline points="2925,211 2925,989" fill="none" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+<polyline points="1725,211 1725,989" fill="none" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+<polyline points="2325,451 2325,989" fill="none" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+<polyline points="3134,540 3150,540 3150,1020 3316,1020" fill="none" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6,4"/>
+<circle id="forma-tobe-T_Inicio" cx="225" cy="60" r="18" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="225" y="47" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Solicitu</text>
+<text x="225" y="60" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">d</text>
+<text id="cnt-tobe-T_Inicio" x="225" y="73" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Presentar" x="316" y="29" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="375" y="40" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Presentar</text>
+<text x="375" y="54" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">solicitud y</text>
+<text x="375" y="66" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">anexos</text>
+<text id="cnt-tobe-T_Presentar" x="375" y="80" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Crear_expediente" x="466" y="149" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="525" y="160" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Crear expediente</text>
+<text x="525" y="174" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">desde el</text>
+<text x="525" y="186" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">radicado</text>
+<text id="cnt-tobe-T_Crear_expediente" x="525" y="200" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Repartir" x="616" y="149" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="675" y="167" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Repartir por</text>
+<text x="675" y="180" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">reglas y carga</text>
+<text id="cnt-tobe-T_Repartir" x="675" y="193" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Checklist" x="766" y="389" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="825" y="400" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Checklist de</text>
+<text x="825" y="414" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">requisitos por</text>
+<text x="825" y="426" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">renta</text>
+<text id="cnt-tobe-T_Checklist" x="825" y="440" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<polygon id="forma-tobe-T_GW_completa" points="975,397 998,420 975,443 952,420" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="975" y="407" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">¿Procede</text>
+<text x="975" y="420" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">?</text>
+<text id="cnt-tobe-T_GW_completa" x="975" y="433" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Requerimiento" x="1066" y="389" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1125" y="407" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Requerimiento</text>
+<text x="1125" y="420" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">desde plantilla</text>
+<text id="cnt-tobe-T_Requerimiento" x="1125" y="433" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Proyectar_rechazo" x="1216" y="389" width="118" height="62" rx="8" fill="#d9822b" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1275" y="400" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Rechazo desde</text>
+<text x="1275" y="414" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">plantilla (firma</text>
+<text x="1275" y="426" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">del líder)</text>
+<text id="cnt-tobe-T_Proyectar_rechazo" x="1275" y="440" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Notificar_inadmision" x="1216" y="629" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1275" y="640" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Notificar y</text>
+<text x="1275" y="654" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">trazar</text>
+<text x="1275" y="666" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">inadmisión</text>
+<text id="cnt-tobe-T_Notificar_inadmision" x="1275" y="680" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Notificar_rechazo" x="1366" y="629" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1425" y="647" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Notificar y</text>
+<text x="1425" y="660" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">trazar rechazo</text>
+<text id="cnt-tobe-T_Notificar_rechazo" x="1425" y="673" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<circle id="forma-tobe-T_Fin_rechazo" cx="1575" cy="660" r="18" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1575" y="647" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Rechazad</text>
+<text x="1575" y="660" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">a</text>
+<text id="cnt-tobe-T_Fin_rechazo" x="1575" y="673" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Subsanar" x="1366" y="29" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1425" y="47" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Subsanar dentro</text>
+<text x="1425" y="60" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">del término</text>
+<text id="cnt-tobe-T_Subsanar" x="1425" y="73" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Validar_subsanacion" x="1516" y="389" width="118" height="62" rx="8" fill="#3478b8" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1575" y="400" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Validar</text>
+<text x="1575" y="414" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">subsanación con</text>
+<text x="1575" y="426" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">checklist</text>
+<text id="cnt-tobe-T_Validar_subsanacion" x="1575" y="440" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Vista_360" x="1666" y="149" width="118" height="62" rx="8" fill="#8e5bb5" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1725" y="160" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Vista 360 del</text>
+<text x="1725" y="174" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">contribuyente</text>
+<text x="1725" y="186" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">(solo consulta)</text>
+<text id="cnt-tobe-T_Vista_360" x="1725" y="200" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Solicitud_ANS" x="1816" y="509" width="118" height="62" rx="8" fill="#8e5bb5" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1875" y="520" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Atender</text>
+<text x="1875" y="534" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">solicitud con</text>
+<text x="1875" y="546" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">ANS y…</text>
+<text id="cnt-tobe-T_Solicitud_ANS" x="1875" y="560" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Analizar" x="1966" y="389" width="118" height="62" rx="8" fill="#d9822b" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2025" y="400" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Analizar y</text>
+<text x="2025" y="414" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">verificar el</text>
+<text x="2025" y="426" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">saldo</text>
+<text id="cnt-tobe-T_Analizar" x="2025" y="440" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Revisar_proyecto" x="2116" y="269" width="118" height="62" rx="8" fill="#d9822b" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2175" y="287" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Revisar proyecto</text>
+<text x="2175" y="300" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">en la bandeja</text>
+<text id="cnt-tobe-T_Revisar_proyecto" x="2175" y="313" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Generar_resolucion" x="2266" y="389" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2325" y="400" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Generar</text>
+<text x="2325" y="414" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">resolución desde</text>
+<text x="2325" y="426" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">plantilla</text>
+<text id="cnt-tobe-T_Generar_resolucion" x="2325" y="440" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Firmar" x="2416" y="269" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2475" y="280" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Revisar y firmar</text>
+<text x="2475" y="294" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">con versión</text>
+<text x="2475" y="306" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">controlada</text>
+<text id="cnt-tobe-T_Firmar" x="2475" y="320" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Notificar_resolucion" x="2566" y="629" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2625" y="640" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Notificar y</text>
+<text x="2625" y="654" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">trazar</text>
+<text x="2625" y="666" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">resolución</text>
+<text id="cnt-tobe-T_Notificar_resolucion" x="2625" y="680" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<polygon id="forma-tobe-T_GW_recurso" points="2775,637 2798,660 2775,683 2752,660" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2775" y="647" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">¿Recurso</text>
+<text x="2775" y="660" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">?</text>
+<text id="cnt-tobe-T_GW_recurso" x="2775" y="673" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Interponer_recurso" x="2866" y="29" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2925" y="47" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Interponer</text>
+<text x="2925" y="60" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">recurso</text>
+<text id="cnt-tobe-T_Interponer_recurso" x="2925" y="73" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Resolver_recurso" x="3016" y="749" width="118" height="62" rx="8" fill="#d9822b" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3075" y="767" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Resolver recurso</text>
+<text x="3075" y="780" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">con relatoría</text>
+<text id="cnt-tobe-T_Resolver_recurso" x="3075" y="793" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Notificar_recurso" x="3316" y="629" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3375" y="640" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Notificar</text>
+<text x="3375" y="654" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">decisión del</text>
+<text x="3375" y="666" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">recurso</text>
+<text id="cnt-tobe-T_Notificar_recurso" x="3375" y="680" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<circle id="forma-tobe-T_Fin_recurso" cx="3675" cy="660" r="18" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3675" y="647" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Recurso</text>
+<text x="3675" y="660" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">resuelto</text>
+<text id="cnt-tobe-T_Fin_recurso" x="3675" y="673" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Ejecutoria" x="2866" y="149" width="118" height="62" rx="8" fill="#1a9a8a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2925" y="160" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Motor de</text>
+<text x="2925" y="174" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">términos:</text>
+<text x="2925" y="186" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">ejecutoria</text>
+<text id="cnt-tobe-T_Ejecutoria" x="2925" y="200" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Registrar_SAP" x="3016" y="509" width="118" height="62" rx="8" fill="#3f9b4a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3075" y="520" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Registrar en</text>
+<text x="3075" y="534" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">cuenta corriente</text>
+<text x="3075" y="546" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">(tarea con ANS)</text>
+<text id="cnt-tobe-T_Registrar_SAP" x="3075" y="560" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<polygon id="forma-tobe-T_GW_pago" points="3225,517 3248,540 3225,563 3202,540" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3225" y="527" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">¿Saldo a</text>
+<text x="3225" y="540" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">pagar?</text>
+<text id="cnt-tobe-T_GW_pago" x="3225" y="553" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<circle id="forma-tobe-T_Cierre_compensada" cx="3375" cy="540" r="18" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3375" y="527" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Compensa</text>
+<text x="3375" y="540" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">da</text>
+<text id="cnt-tobe-T_Cierre_compensada" x="3375" y="553" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Cruce_cartera" x="3466" y="509" width="118" height="62" rx="8" fill="#3f9b4a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3525" y="520" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Cruzar con</text>
+<text x="3525" y="534" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">cartera en la</text>
+<text x="3525" y="546" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">vista 360</text>
+<text id="cnt-tobe-T_Cruce_cartera" x="3525" y="560" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Orden_pago" x="3466" y="869" width="118" height="62" rx="8" fill="#3f9b4a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3525" y="880" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Orden de pago y</text>
+<text x="3525" y="894" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">registro</text>
+<text x="3525" y="906" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">contable</text>
+<text id="cnt-tobe-T_Orden_pago" x="3525" y="920" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Pagar" x="3616" y="869" width="118" height="62" rx="8" fill="#3f9b4a" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3675" y="887" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Pagar y adjuntar</text>
+<text x="3675" y="900" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">evidencia</text>
+<text id="cnt-tobe-T_Pagar" x="3675" y="913" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-T_Cierre" x="3766" y="149" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3825" y="160" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Cerrar</text>
+<text x="3825" y="174" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">expediente y</text>
+<text x="3825" y="186" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">bitácora</text>
+<text id="cnt-tobe-T_Cierre" x="3825" y="200" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<circle id="forma-tobe-T_Fin_pagada" cx="3975" cy="180" r="18" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3975" y="174" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Pagada</text>
+<text id="cnt-tobe-T_Fin_pagada" x="3975" y="186" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-S_Mercurio" x="466" y="989" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="525" y="1007" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Mercurio</text>
+<text x="525" y="1020" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">(radicado)</text>
+<text id="cnt-tobe-S_Mercurio" x="525" y="1033" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-S_Tablero" x="2866" y="989" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2925" y="1007" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Tablero, alertas</text>
+<text x="2925" y="1020" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">y bitácora</text>
+<text id="cnt-tobe-S_Tablero" x="2925" y="1033" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-S_Lago" x="1666" y="989" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="1725" y="1000" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Lago de datos /</text>
+<text x="1725" y="1014" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Power BI</text>
+<text x="1725" y="1026" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">(consulta)</text>
+<text id="cnt-tobe-S_Lago" x="1725" y="1040" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-S_Plantillas" x="2266" y="989" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="2325" y="1014" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">Plantillas y NAS</text>
+<text id="cnt-tobe-S_Plantillas" x="2325" y="1026" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+<rect id="forma-tobe-S_SAP" x="3316" y="989" width="118" height="62" rx="8" fill="#b8bec4" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+<text x="3375" y="1007" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">SAP (vía Centro</text>
+<text x="3375" y="1020" font-size="11" fill="#212529" text-anchor="middle" dominant-baseline="middle">de Competencias)</text>
+<text id="cnt-tobe-S_SAP" x="3375" y="1033" font-size="11" font-weight="700" fill="#212529" text-anchor="middle" dominant-baseline="middle"></text>
+</svg>

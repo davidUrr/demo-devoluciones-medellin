@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+caso/
+# La base del tablero se crea y se llena sola al arrancar
+tablero_medellin.db
+.streamlit/secrets.toml
